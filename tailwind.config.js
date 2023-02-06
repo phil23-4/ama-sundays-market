@@ -4,37 +4,18 @@ module.exports = {
     './components/**/*.{js,ts,jsx,tsx}',
   ],
   theme: {
-    screens: {
-      sm: '480px',
-      md: '768px',
-      lg: '1024px',
-      xl: '1280px',
-      xxl: '1536px',
-    },
     colors: {
-      blue: '#1fb6ff',
-      purple: '#7e5bef',
-      pink: '#ff49db',
-      orange: '#ff7849',
-      green: '#13ce66',
-      yellow: '#ffc82c',
-      'gray-dark': '#273444',
-      gray: '#8492a6',
-      'gray-light': '#d3dce6',
-    },
-    fontFamily: {
-      sans: ['Graphik', 'sans-serif'],
-      serif: ['Merriweather', 'serif'],
-    },
-    extend: {
-      spacing: {
-        128: '32rem',
-        144: '36rem',
-      },
-      borderRadius: {
-        '4xl': '2rem',
-      },
+      primary: '#fb811e',
+      primaryDark: '#ffc945',
+      primaryLight: '#fcf1e7',
+      secondary: '#009f4d',
+      fontColor: '#707070',
     },
   },
-  plugins: [],
+  plugins: [
+    require('preline/plugin'),
+    require('@tailwindcss/aspect-ratio'),
+    require('@tailwindcss/forms'),
+    require('@tailwindcss/typography'),
+  ],
 };
