@@ -1,9 +1,7 @@
 // components/layout.js
 import Head from "next/head";
 
-// import Sidebar from "../common/Navbar/sidebar";
-// import Footer from "../common/Footer/footer";
-// import Header from "../common/Navbar/header";
+import Navbar from "../components/NavBar/nav";
 
 export default function Layout({ children }) {
   return (
@@ -14,9 +12,9 @@ export default function Layout({ children }) {
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      {/* <Header /> */}
+      <Navbar />
       {/* <Sidebar /> */}
-      <main className="h-full w-full overflow-y-auto bg-gray-50 px-4 dark:bg-slate-800 dark:text-white sm:px-6 md:px-8">
+      <main className="h-full w-full overflow-y-auto px-4  sm:px-6 md:px-8">
         {children}
       </main>
 
