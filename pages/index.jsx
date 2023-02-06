@@ -1,32 +1,12 @@
-// index.html
-import { useState } from 'react';
-function Header({ title= 'Create Next App' }) {
-return <h1>{title ? title : 'Default title'}</h1>;
-}
+import Registration from "../components/Forms/registrationForm";
+import Layout from "../components/layout";
+import Pricing from "../components/Pricing/pricing";
 
-export default function HomePage() {
-const names = ['Ada Lovelace', 'Grace Hopper', 'Margaret Hamilton'];
-
-const [likes, setLikes] = useState(0);
-
-function handleClick() {
-setLikes(likes + 1);
-}
-
-return (
-    
-<div>
-    <h1 >
-      Hello world!
-    </h1>
-    <Header title="Develop. Preview. Ship. 🚀" />
-    <ul>
-        {names.map((name) => (
-        <li key={name}>{name}</li>
-        ))}
-    </ul>
-
-    <button onClick={handleClick}>Like ({likes})</button>
-</div>
-);
+export default function Home() {
+  return (
+    <Layout>
+      <Pricing />
+      <Registration />
+    </Layout>
+  );
 }
