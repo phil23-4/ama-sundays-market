@@ -108,8 +108,11 @@ export default function Navbar() {
         </button>
         <div className="hidden text-sm font-medium lg:ml-8 lg:flex lg:items-center">
           <a
-            className="flex items-center gap-x-2  text-gray-900 hover:text-primary/90 dark:border-gray-700 dark:text-gray-400 dark:hover:text-primaryDark sm:my-6 sm:border-l sm:border-gray-300 sm:pl-6"
+            // className="flex items-center gap-x-2 text-gray-900 hover:text-primary/90 dark:border-gray-700 dark:text-gray-400 dark:hover:text-primaryDark sm:my-6 sm:border-l sm:border-gray-300 sm:pl-6"
             href="/register"
+            className={`flex items-center gap-x-2 text-gray-900 hover:text-primary/90 dark:border-gray-700 dark:text-gray-400 dark:hover:text-primaryDark sm:my-6 sm:border-l sm:border-gray-300 sm:pl-6 ${
+              currentRoute === "/register" && "text-primary dark:text-primary"
+            }`}
           >
             <svg
               className="h-4 w-4"
@@ -124,7 +127,10 @@ export default function Navbar() {
             Register
           </a>
           <a
-            className="-my-2.5 ml-8 inline-flex justify-center rounded-lg bg-primary/95 py-2.5 px-4 text-white hover:bg-primary/[.16] hover:text-primary/95"
+            className={`-my-2.5 ml-8 inline-flex justify-center rounded-lg bg-secondary/95 py-2.5 px-4 text-white hover:bg-primary/[.16] hover:text-primary/95 dark:bg-secondary/95 ${
+              currentRoute === "/contact" &&
+              " bg-primary/95 text-white  hover:bg-primary/[.16] hover:text-primary/95 dark:bg-primary/95"
+            }`}
             href="/contact"
           >
             <span>
