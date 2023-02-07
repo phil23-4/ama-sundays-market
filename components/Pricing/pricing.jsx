@@ -1,24 +1,26 @@
+import Link from "next/link";
+
 const priceList = [
   {
     name: "Daily",
     target: "Lorem ipsum",
     price: 50,
     duration: "Sunday",
-    benefits: ["lorem", "ipsum", "delores"],
+    benefits: ["1 Sunday", "ipsum", "delores"],
   },
   {
     name: "Season",
     target: "Lorem ipsum",
     price: 120,
     duration: "season",
-    benefits: ["lorem", "ipsum", "delores"],
+    benefits: ["12 Sundays", "ipsum", "delores"],
   },
   {
     name: "Monthly",
     target: "Lorem ipsum",
-    price: 200,
+    price: 80,
     duration: "month",
-    benefits: ["lorem", "ipsum", "delores"],
+    benefits: ["4 Sundays", "ipsum", "delores"],
   },
 ];
 
@@ -33,7 +35,7 @@ export default function Pricing() {
 
       <div className="load-animation reveal mx-auto mb-20 max-w-xl text-center">
         <h2
-          className="font-heading mx-auto mb-4 max-w-xl text-5xl font-bold leading-tight md:text-5xl"
+          className="font-heading mx-auto mb-4 max-w-xl text-5xl font-bold leading-tight dark:text-white md:text-5xl"
           data-config-id="auto-txt-1-2"
         >
           Choose your right plan
@@ -57,15 +59,15 @@ export default function Pricing() {
               key={i}
               className={classNames(
                 `${price.name.toString().toLowerCase()}` === "season"
-                  ? "shadow-lg shadow-primary/[.16] hover:shadow-primary/20 dark:shadow-primary/[.16] "
-                  : "shadow-none hover:shadow-secondary/20",
+                  ? "shadow-lg shadow-primary/[.26] hover:shadow-primary/20  dark:shadow-primary/[.16] "
+                  : "shadow-none hover:shadow-secondary/30",
                 "relative z-10 rounded-xl border bg-white p-5 hover:-translate-y-2  hover:shadow-2xl  dark:border-gray-700 dark:bg-slate-900 md:p-10"
               )}
             >
-              <h3 className="text-xl font-bold text-gray-800 dark:text-gray-200">
+              <h3 className="text-xl font-bold text-gray-800 dark:text-white">
                 {price.name}
               </h3>
-              <div className="text-sm text-gray-500 dark:text-gray-400">
+              <div className="text-sm text-gray-500 dark:text-white">
                 {price.target}
               </div>
               {/* <span className="absolute top-0 right-0 rounded-tr-xl rounded-bl-xl bg-gray-800 py-1.5 px-3 text-xs font-medium text-white dark:bg-gray-900">
@@ -83,13 +85,13 @@ export default function Pricing() {
               </span>
 
               <div className="mt-5">
-                <span className="text-5xl font-bold text-gray-800 dark:text-gray-200">
+                <span className="text-3xl font-bold text-gray-800 dark:text-white lg:text-5xl">
                   ${price.price}
                 </span>
-                <span className="text-lg font-bold text-gray-800 dark:text-gray-200">
+                <span className="text-lg font-bold text-gray-800 dark:text-white">
                   .00
                 </span>
-                <span className="ml-3 text-gray-500">
+                <span className="ml-3 text-gray-500 dark:text-white/90">
                   USD / {price.duration}
                 </span>
               </div>
@@ -119,7 +121,7 @@ export default function Pricing() {
                           fill="currentColor"
                         />
                       </svg>
-                      <span className="text-gray-800 dark:text-gray-200">
+                      <span className="text-gray-800 dark:text-white">
                         {benefit}
                       </span>
                     </li>
@@ -130,41 +132,43 @@ export default function Pricing() {
 
               <div className="mt-5 grid grid-cols-2 gap-x-4 py-4 first:pt-0 last:pb-0">
                 <div>
-                  <p className="text-sm text-gray-500 dark:text-gray-200">
+                  <p className="text-sm text-gray-500 dark:text-white">
                     Cancel anytime.
                   </p>
-                  <p className="text-sm text-gray-500 dark:text-gray-200">
+                  <p className="text-sm text-gray-500 dark:text-white">
                     No card required.
                   </p>
                 </div>
 
                 <div className="flex justify-end">
-                  <button
-                    type="button"
-                    className={classNames(
-                      `${price.name.toString().toLowerCase()}` === "season"
-                        ? "bg-primary/80 hover:bg-primary/95 focus:ring-primary/50"
-                        : "bg-secondary/80 hover:bg-secondary/95 focus:ring-secondary/50",
-                      "inline-flex items-center justify-center gap-2 rounded-md border border-transparent py-3 px-4 text-xs font-semibold text-white transition-all focus:outline-none  focus:ring-2 focus:ring-offset-2  dark:focus:ring-offset-gray-800 lg:text-sm"
-                    )}
-                    //   className="inline-flex items-center justify-center gap-2 rounded-md border border-transparent bg-blue-500 py-3 px-4 text-sm font-semibold text-white transition-all hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 dark:focus:ring-offset-gray-800"
-                  >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      strokeWidth={1.5}
-                      stroke="currentColor"
-                      className="h-5 w-5 lg:h-8 lg:w-8"
+                  <Link href={"/register"}>
+                    <button
+                      type="button"
+                      className={classNames(
+                        `${price.name.toString().toLowerCase()}` === "season"
+                          ? "bg-primary/80 hover:bg-primary/95 focus:ring-primary/50"
+                          : "bg-secondary/80 hover:bg-secondary/95 focus:ring-secondary/50",
+                        "inline-flex items-center justify-center gap-2 rounded-md border border-transparent py-3 px-4 text-xs font-semibold text-white transition-all focus:outline-none  focus:ring-2 focus:ring-offset-2  dark:focus:ring-offset-gray-800 lg:text-sm"
+                      )}
+                      //   className="inline-flex items-center justify-center gap-2 rounded-md border border-transparent bg-blue-500 py-3 px-4 text-sm font-semibold text-white transition-all hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 dark:focus:ring-offset-gray-800"
                     >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        d="M19 7.5v3m0 0v3m0-3h3m-3 0h-3m-2.25-4.125a3.375 3.375 0 11-6.75 0 3.375 3.375 0 016.75 0zM4 19.235v-.11a6.375 6.375 0 0112.75 0v.109A12.318 12.318 0 0110.374 21c-2.331 0-4.512-.645-6.374-1.766z"
-                      />
-                    </svg>
-                    Reserve a table
-                  </button>
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        strokeWidth={1.5}
+                        stroke="currentColor"
+                        className="h-6 w-6 lg:h-8 lg:w-8"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          d="M19 7.5v3m0 0v3m0-3h3m-3 0h-3m-2.25-4.125a3.375 3.375 0 11-6.75 0 3.375 3.375 0 016.75 0zM4 19.235v-.11a6.375 6.375 0 0112.75 0v.109A12.318 12.318 0 0110.374 21c-2.331 0-4.512-.645-6.374-1.766z"
+                        />
+                      </svg>
+                      Get package
+                    </button>
+                  </Link>
                 </div>
               </div>
             </div>
