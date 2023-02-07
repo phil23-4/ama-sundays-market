@@ -2,6 +2,7 @@
 import Head from "next/head";
 
 import Navbar from "../components/NavBar/nav";
+import Footer from "./Footer/footer";
 
 export default function Layout({ children }) {
   return (
@@ -14,11 +15,11 @@ export default function Layout({ children }) {
       </Head>
       <Navbar />
       {/* <Sidebar /> */}
-      <main className="h-full w-full overflow-y-auto px-4  sm:px-6 md:px-8">
+      <main className="h-full w-full overflow-y-auto bg-white px-4 text-gray-900 dark:bg-slate-900 dark:text-white/80 sm:px-6 md:px-8">
         {children}
       </main>
 
-      {/* <Footer /> */}
+      <Footer />
     </>
   );
 }
