@@ -10,6 +10,9 @@ module.exports = {
         primaryDark: '#ffc945',
         primaryLight: '#fcf1e7',
         secondary: '#009f4d',
+        blueGray:{
+          50: '#ECEFF1'
+        },
         green: '#28a745',
         fontColor: '#707070',
       },
