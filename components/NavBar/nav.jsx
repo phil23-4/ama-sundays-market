@@ -1,10 +1,13 @@
 /* eslint-disable react/jsx-key */
 import Link from "next/link";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import { useRouter } from "next/router";
 import useScrollPosition from "../../hooks/useScrollPosition";
+import { useTheme } from "next-themes";
+import { MoonIcon, SunIcon } from "@heroicons/react/24/outline";
 
-import logo from "./../../public/vercel.svg";
+import logo from "./../../public/logo.png";
 
 const navigation = {
   nav: [
@@ -13,25 +16,53 @@ const navigation = {
       name: "Home",
       href: "/",
     },
-    {
-      id: 2,
-      name: "About",
-      href: "/about",
-    },
+
     {
       id: 3,
-      name: "Services",
-      href: "/services",
+      name: "Pricing",
+      href: "/pricing",
     },
-    // {
-    //   id: 4,
-    //   name: "Contact",
-    //   href: "/contact",
-    // },
+    {
+      id: 4,
+      name: "Gallery",
+      href: "/gallery",
+    },
   ],
 };
 
 export default function Navbar() {
+  const { systemTheme, theme, setTheme } = useTheme();
+
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  const renderThemeChanger = () => {
+    if (!mounted) return null;
+
+    const currentTheme = theme === "system" ? systemTheme : theme;
+
+    if (currentTheme === "dark") {
+      return (
+        <SunIcon
+          className="mx-3 h-5 w-5 text-primaryDark "
+          role="button"
+          onClick={() => setTheme("light")}
+        />
+      );
+    } else {
+      return (
+        <MoonIcon
+          className="mx-3 h-5 w-5 text-gray-900 "
+          role="button"
+          onClick={() => setTheme("dark")}
+        />
+      );
+    }
+  };
+
   function classNames(...classes) {
     return classes.filter(Boolean).join(" ");
   }
@@ -52,16 +83,17 @@ export default function Navbar() {
       <div className="relative flex flex-wrap items-center py-[0.125rem]">
         {/* <div className="absolute inset-x-0 bottom-0 h-px bg-slate-900/5"></div> */}
         <Link href="/">
-          <a key={1} className="mr-auto flex-none" aria-label="Go home">
-            <span className="sr-only">Visit Zimbabwe</span>
+          <a key={1} className="mr-auto flex-none py-2" aria-label="Go home">
+            <span className="sr-only">AMA Sunday Farmers Market</span>
             <Image
-              className="md:w-30 md:h-20"
+              className="md:w-30 aspect-w-10 aspect-h-4 md:h-12 lg:h-8"
               src={logo}
               alt="Visit Zimbabwe"
               fill="#28a745"
               quality={90}
-              width={110.5}
-              height={40.75}
+              width={105.5}
+              height={55}
+              loading={"lazy"}
               blurDataURL="data:image/png;base64, iVBORwKGgoAAAANSUhEUgAAAMAAAADA..."
               placeholder="blur"
             />
@@ -107,8 +139,8 @@ export default function Navbar() {
           </svg>
         </button>
         <div className="hidden text-sm font-medium lg:ml-8 lg:flex lg:items-center">
+          {renderThemeChanger()}
           <a
-            // className="flex items-center gap-x-2 text-gray-900 hover:text-primary/90 dark:border-gray-700 dark:text-gray-400 dark:hover:text-primaryDark sm:my-6 sm:border-l sm:border-gray-300 sm:pl-6"
             href="/register"
             className={`flex items-center gap-x-2 text-gray-900 hover:text-primary/90 dark:border-gray-700 dark:text-gray-400 dark:hover:text-primaryDark sm:my-6 sm:border-l sm:border-gray-300 sm:pl-6 ${
               currentRoute === "/register" && "text-primary dark:text-primary"

@@ -3,12 +3,12 @@ import TermsModal from "../ui/termsModal";
 
 export default function Registration() {
   return (
-    // <!-- Hire Us -->
+    // <!-- Contact Us -->
     <div className="mx-auto max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14">
       {/* <!-- Grid --> */}
       <div className="grid items-center gap-12 md:grid-cols-2">
         <div>
-          <h1 className="text-3xl font-bold text-gray-800 dark:text-white sm:text-4xl lg:text-5xl lg:leading-tight">
+          <h1 className="font-display inline text-3xl font-bold text-gray-800 dark:text-white sm:text-4xl lg:text-5xl lg:leading-tight">
             Join us
           </h1>
           <p className="mt-1 text-gray-800 dark:text-white md:text-lg">
@@ -117,6 +117,7 @@ export default function Registration() {
                     </label>
                     <input
                       type="text"
+                      placeholder="John"
                       name="hs-firstname-join-us-1"
                       id="hs-firstname-join-us-1"
                       className="block w-full rounded-md border-gray-200 py-3 px-4 text-sm focus:border-primary/90 focus:ring-primary/90 dark:border-gray-700 dark:bg-slate-900 dark:text-white/70"
@@ -132,6 +133,7 @@ export default function Registration() {
                     </label>
                     <input
                       type="text"
+                      placeholder="Doe"
                       name="hs-lastname-join-us-1"
                       id="hs-lastname-join-us-1"
                       className="block w-full rounded-md border-gray-200 py-3 px-4 text-sm focus:border-primary/90 focus:ring-primary/90 dark:border-gray-700 dark:bg-slate-900 dark:text-white/70"
@@ -150,6 +152,7 @@ export default function Registration() {
                   <input
                     type="email"
                     name="hs-work-email-join-us-1"
+                    placeholder="example@email.com"
                     id="hs-work-email-join-us-1"
                     autoComplete="email"
                     className="required block w-full rounded-md border-gray-200 py-3 px-4 text-sm focus:border-primary/90 focus:ring-primary/90 dark:border-gray-700 dark:bg-slate-900 dark:text-white/70"
@@ -168,6 +171,7 @@ export default function Registration() {
                     <input
                       type="text"
                       name="hs-company-join-us-1"
+                      placeholder="Company name"
                       id="hs-company-join-us-1"
                       className="block w-full rounded-md border-gray-200 py-3 px-4 text-sm focus:border-primary/90 focus:ring-primary/90 dark:border-gray-700 dark:bg-slate-900 dark:text-white/70"
                     />
@@ -184,7 +188,9 @@ export default function Registration() {
                       type="tel"
                       name="hs-company-website-join-us-1"
                       id="hs-company-website-join-us-1"
-                      className="block w-full rounded-md border-gray-200 py-3 px-4 text-sm focus:border-primary/90 focus:ring-primary/90 dark:border-gray-700 dark:bg-slate-900 dark:text-white/70"
+                      placeholder="+263-713-678"
+                      pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}"
+                      className="block w-full rounded-md border-gray-200 py-3 px-4 text-sm required:border-red-500 focus:border-primary/90 focus:ring-primary/90 dark:border-gray-700 dark:bg-slate-900 dark:text-white/70"
                     />
                   </div>
                 </div>
@@ -199,6 +205,7 @@ export default function Registration() {
                   </label>
                   <textarea
                     id="hs-about-join-us-1"
+                    placeholder="55 Hudson Avenue Harare, Zimbabwe"
                     name="hs-about-join-us-1"
                     rows="4"
                     className="block w-full rounded-md border-gray-200 py-3 px-4 text-sm focus:border-primary/90 focus:ring-primary/90 dark:border-gray-700 dark:bg-slate-900 dark:text-white/70"
@@ -274,6 +281,6 @@ export default function Registration() {
       </div>
       {/* <!-- End Grid --> */}
     </div>
-    // <!-- End Hire Us -->
+    // <!-- End Contact Us -->
   );
 }

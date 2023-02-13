@@ -50,7 +50,7 @@ export default function TermsModal() {
             </div>
 
             <div className="space-y-4">
-              <h4 className="mb-2 text-sm font-semibold uppercase text-gray-600 dark:text-gray-400">
+              <h4 className="mb-2 text-sm font-semibold uppercase text-gray-600 dark:text-gray-200">
                 General
               </h4>
               {/* <!-- Card --> */}
@@ -79,7 +79,7 @@ export default function TermsModal() {
                       <span className="block font-medium text-gray-800 dark:text-gray-200">
                         Check-In Requirements
                       </span>
-                      <span className="block text-sm text-gray-500">
+                      <span className="block text-sm text-gray-500  dark:text-gray-300">
                         Vendors who need to off-load their vehicle in the market
                         area must arrive to the market no later than 8:30 a.m.
                         Vendors who do not need to drive into the market area
@@ -120,7 +120,7 @@ export default function TermsModal() {
                       <span className="block font-medium text-gray-800 dark:text-gray-200">
                         Products to be sold
                       </span>
-                      <span className="block text-sm text-gray-500">
+                      <span className="block text-sm text-gray-500  dark:text-gray-300">
                         The Market Master, in conference with the other partners
                         will determine, on a seasonal basis, the overall size of
                         the market in terms of the number of seasonal and daily
@@ -160,7 +160,7 @@ export default function TermsModal() {
                       <span className="block font-medium text-gray-800 dark:text-gray-200">
                         Application for the Market
                       </span>
-                      <span className="block text-sm text-gray-500">
+                      <span className="block text-sm text-gray-500  dark:text-gray-300">
                         All interested vendors must submit an application to
                         participate in the Market. If they are accepted as a
                         full season vendor, they will have a reserved,
@@ -205,7 +205,7 @@ export default function TermsModal() {
                       <span className="block font-medium text-gray-800 dark:text-gray-200">
                         Rights Reserved by the Market Master
                       </span>
-                      <span className="block text-sm text-gray-500">
+                      <span className="block text-sm text-gray-500 dark:text-gray-300">
                         The Market Master reserves the right to reject a vendor
                         application if, in the Market Master&apos;s judgment,
                         the goods and merchandise are not compatible with the
@@ -222,7 +222,7 @@ export default function TermsModal() {
                 </label>
               </div>
               {/* <!-- End Card --> */}
-              <h4 className="mb-2 text-sm font-semibold uppercase text-gray-600 dark:text-gray-400">
+              <h4 className="mb-2 text-sm font-semibold uppercase text-gray-600 dark:text-gray-200">
                 Advanced
               </h4>
               {/* <!-- Card --> */}
@@ -253,7 +253,7 @@ export default function TermsModal() {
                       <span className="block font-medium text-gray-800 dark:text-gray-200">
                         Vendor Responsibilities
                       </span>
-                      <span className="block text-sm text-gray-500">
+                      <span className="block text-sm text-gray-500 dark:text-gray-300">
                         <ol className="list-decimal">
                           {rules.map((rule, i) => (
                             <li key={i} className="p-2">
@@ -275,12 +275,13 @@ export default function TermsModal() {
           <div className="flex items-center justify-end gap-x-2 border-t bg-gray-50 py-3 px-4 dark:border-gray-700 dark:bg-gray-800">
             <button
               type="button"
-              className="inline-flex items-center justify-center gap-2 rounded-md border bg-white py-2.5 px-4 align-middle text-sm font-medium text-gray-700 shadow-sm transition-all hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-primary/80 focus:ring-offset-2 focus:ring-offset-white dark:border-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-slate-800 dark:hover:text-white dark:focus:ring-offset-gray-800"
+              className="inline-flex items-center justify-center gap-2 rounded-md border bg-white py-2.5 px-4 align-middle text-sm font-medium text-gray-700 shadow-sm transition-all hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-primary/80 focus:ring-offset-2 focus:ring-offset-white dark:border-gray-700 dark:bg-gray-800 dark:text-gray-200 dark:hover:bg-slate-800 dark:hover:text-white dark:focus:ring-offset-gray-800"
               data-hs-overlay="#hs-regulations"
             >
               Cancel
             </button>
             <a
+              data-hs-overlay="#hs-regulations"
               className="inline-flex items-center justify-center gap-2 rounded-md border border-transparent bg-primary py-2.5 px-4 text-sm font-semibold text-white transition-all hover:bg-primary/80 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 dark:focus:ring-offset-gray-800"
               href="#"
             >

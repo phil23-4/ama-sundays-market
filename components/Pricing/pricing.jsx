@@ -24,7 +24,7 @@ const priceList = [
   },
 ];
 
-export default function Pricing() {
+export default function PricingCard() {
   function classNames(...classes) {
     return classes.filter(Boolean).join(" ");
   }
@@ -59,7 +59,7 @@ export default function Pricing() {
               key={i}
               className={classNames(
                 `${price.name.toString().toLowerCase()}` === "season"
-                  ? "shadow-lg shadow-primary/[.26] hover:shadow-primary/20  dark:shadow-primary/[.16] "
+                  ? "shadow-lg shadow-primary/[.26] hover:shadow-primary/20 dark:shadow-primary/[.16] "
                   : "shadow-none hover:shadow-secondary/30",
                 "relative z-10 rounded-xl border bg-white p-5 hover:-translate-y-2  hover:shadow-2xl  dark:border-gray-700 dark:bg-slate-900 md:p-10"
               )}

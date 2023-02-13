@@ -59,7 +59,7 @@ export default function Hero() {
                 <div className="w-full p-2.5 md:w-auto">
                   <div className="block">
                     <button
-                      className="w-full rounded-xl border bg-white/0 py-4 px-9 font-semibold text-slate-900 ring-1 ring-primary/[.16] transition duration-200 ease-in-out hover:bg-white/25 hover:ring-primary/[.16] "
+                      className="w-full rounded-xl border bg-white/0 py-4 px-9 font-semibold text-slate-900 ring-1 ring-primary/[.16] transition duration-200 ease-in-out hover:bg-white/25 hover:ring-primary/[.16] dark:text-white/90 "
                       type="button"
                     >
                       <div className="-m-1 flex flex-wrap items-center justify-center">
@@ -94,16 +94,18 @@ export default function Hero() {
               <Partners />
             </div>
 
-            <div className="aspect-w-12 aspect-h-2 relative  mb-8  md:w-1/2">
+            {/* <div className="aspect-w-12 aspect-h-4 w-fit md:w-1/2">
               <Image
-                className="m-20 transform rounded-full transition duration-1000 ease-in-out hover:-translate-y-4"
+                className="mt-20 transform rounded-xl transition duration-1000 ease-in-out hover:-translate-y-4"
                 src="/assets/images/service2.jpg"
-                layout="fill"
+                width={240}
+                height={440}
+                loading={"lazy"}
                 quality={85}
                 // objectFit="contain"
                 alt="AMA Sunday Farmers Market"
               />
-            </div>
+            </div> */}
           </div>
         </div>
       </div>
