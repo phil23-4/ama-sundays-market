@@ -288,19 +288,19 @@ export default function Registration() {
 
                   <div>
                     <label
-                      htmlFor="phoneNumber"
+                      htmlFor="phone"
                       className="block text-sm font-medium text-gray-700 dark:text-white"
                     >
                       Phone Number
                     </label>
                     <input
                       type="tel"
-                      name="phoneNumber"
-                      value={phoneNumber}
+                      name="phone"
+                      value={phone}
                       onChange={(e) => {
                         setPhone(e.target.value);
                       }}
-                      id="phoneNumber"
+                      id="phone"
                       placeholder="+263-713-678"
                       pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}"
                       className="block w-full rounded-md border-gray-200 py-3 px-4 text-sm required:border-red-500 focus:border-primary/90 focus:ring-primary/90 dark:border-gray-700 dark:bg-slate-900 dark:text-white/70"
