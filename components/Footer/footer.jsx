@@ -35,7 +35,7 @@ export default function Footer() {
               className="mr-auto flex-none py-2"
               aria-label="Go home"
             >
-              <>
+              <a className="mr-auto flex-none py-2">
                 <span className="sr-only">AMA Sunday Farmers Market</span>
                 <Image
                   className="md:w-30 aspect-w-10 aspect-h-4 md:h-12 lg:h-8"
@@ -49,7 +49,7 @@ export default function Footer() {
                   blurDataURL="data:image/png;base64, iVBORwKGgoAAAANSUhEUgAAAMAAAADA..."
                   placeholder="blur"
                 />
-              </>
+              </a>
             </Link>
           </div>
           {/* <!-- End Col --> */}
@@ -79,16 +79,18 @@ export default function Footer() {
                 className="inline-flex h-8 w-8 items-center justify-center rounded-full text-center text-gray-500 transition hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2 focus:ring-offset-white dark:text-gray-500 dark:hover:bg-gray-800 dark:hover:text-gray-200 dark:focus:ring-offset-slate-900"
                 href="#"
               >
-                <svg
-                  className="h-5 w-5"
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  fill="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path d={icon.icon} />
-                </svg>
+                <a className="inline-flex h-8 w-8 items-center justify-center rounded-full text-center text-gray-500 transition hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2 focus:ring-offset-white dark:text-gray-500 dark:hover:bg-gray-800 dark:hover:text-gray-200 dark:focus:ring-offset-slate-900">
+                  <svg
+                    className="h-5 w-5"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    fill="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path d={icon.icon} />
+                  </svg>
+                </a>
               </Link>
             ))}
           </div>
