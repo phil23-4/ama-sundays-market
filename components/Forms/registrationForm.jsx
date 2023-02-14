@@ -302,7 +302,7 @@ export default function Registration() {
                       }}
                       id="phone"
                       placeholder="+263-713-678"
-                      pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}"
+                      pattern="/2637[7-8|1|3][0-9]{7}$"
                       className="block w-full rounded-md border-gray-200 py-3 px-4 text-sm required:border-red-500 focus:border-primary/90 focus:ring-primary/90 dark:border-gray-700 dark:bg-slate-900 dark:text-white/70"
                     />
                   </div>
