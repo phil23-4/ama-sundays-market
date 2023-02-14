@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { useState } from "react";
 import Partners from "../ui/partners";
 import TermsModal from "../ui/termsModal";
@@ -346,13 +347,13 @@ export default function Registration() {
                     className="text-sm text-gray-600 dark:text-gray-300"
                   >
                     By submitting this form I have read and acknowledged the{" "}
-                    <a
+                    <Link
                       data-hs-overlay="#hs-regulations"
                       className="font-medium text-primary/90 decoration-2 hover:underline"
                       href="#"
                     >
                       Terms and Conditions
-                    </a>
+                    </Link>
                   </label>
                 </div>
                 <TermsModal />

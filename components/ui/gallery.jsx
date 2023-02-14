@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export default function Galleryy() {
   return (
     <section className="mb-4 overflow-hidden text-gray-700">
@@ -17,22 +19,25 @@ export default function Galleryy() {
         <div className="-m-1 flex flex-wrap md:-m-2">
           <div className="flex w-1/2 flex-wrap">
             <div className="w-1/2 p-1 md:p-2">
-              <img
+              <Image
                 alt="gallery"
                 className="block h-full w-full rounded-lg object-cover object-center"
                 src="assets/images/services.jpg"
+                layout="fill"
               />
             </div>
             <div className="w-1/2 p-1 md:p-2">
-              <img
+              <Image
                 alt="gallery"
                 className="block h-full w-full rounded-lg object-cover object-center"
                 src="assets/images/ama2.jpg"
+                layout="fill"
               />
             </div>
             <div className="w-full p-1 md:p-2">
-              <img
+              <Image
                 alt="gallery"
+                layout="fill"
                 className="block h-full w-full rounded-lg object-cover object-center"
                 src="assets/images/ama3.jpg"
               />
@@ -40,22 +45,25 @@ export default function Galleryy() {
           </div>
           <div className="flex w-1/2 flex-wrap">
             <div className="w-full p-1 md:p-2">
-              <img
+              <Image
                 alt="gallery"
+                layout="fill"
                 className="block h-full w-full rounded-lg object-cover object-center"
                 src="assets/images/ama1.jpg"
               />
             </div>
             <div className="w-1/2 p-1 md:p-2">
-              <img
+              <Image
                 alt="gallery"
+                layout="fill"
                 className="block h-full w-full rounded-lg object-cover object-center"
                 src="assets/images/team1.jpg"
               />
             </div>
             <div className="w-1/2 p-1 md:p-2">
-              <img
+              <Image
                 alt="gallery"
+                layout="fill"
                 className="block h-full w-full rounded-lg object-cover object-center"
                 src="assets/images/service2.jpg"
               />

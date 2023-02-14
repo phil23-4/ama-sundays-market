@@ -29,26 +29,28 @@ export default function Footer() {
         {/* <!-- Grid --> */}
         <div className="grid grid-cols-1 items-center gap-5 text-center md:grid-cols-3">
           <div>
-            <a
+            <Link
               key={1}
               href={"/"}
               className="mr-auto flex-none py-2"
               aria-label="Go home"
             >
-              <span className="sr-only">AMA Sunday Farmers Market</span>
-              <Image
-                className="md:w-30 aspect-w-10 aspect-h-4 md:h-12 lg:h-8"
-                src={logo}
-                alt="Visit Zimbabwe"
-                fill="#28a745"
-                quality={90}
-                width={105.5}
-                height={55}
-                loading={"lazy"}
-                blurDataURL="data:image/png;base64, iVBORwKGgoAAAANSUhEUgAAAMAAAADA..."
-                placeholder="blur"
-              />
-            </a>
+              <>
+                <span className="sr-only">AMA Sunday Farmers Market</span>
+                <Image
+                  className="md:w-30 aspect-w-10 aspect-h-4 md:h-12 lg:h-8"
+                  src={logo}
+                  alt="Visit Zimbabwe"
+                  fill="#28a745"
+                  quality={90}
+                  width={105.5}
+                  height={55}
+                  loading={"lazy"}
+                  blurDataURL="data:image/png;base64, iVBORwKGgoAAAANSUhEUgAAAMAAAADA..."
+                  placeholder="blur"
+                />
+              </>
+            </Link>
           </div>
           {/* <!-- End Col --> */}
 
@@ -58,12 +60,12 @@ export default function Footer() {
                 key={i}
                 className="relative inline-block pr-8 before:absolute before:top-1/2 before:right-3 before:-translate-y-1/2 before:text-gray-300 before:content-['/'] last:pr-0 last-of-type:before:hidden dark:before:text-gray-600"
               >
-                <a
+                <Link
                   className="inline-flex gap-x-2 text-sm text-gray-500 hover:text-gray-800 dark:text-gray-500 dark:hover:text-gray-200"
                   href={nav.href}
                 >
                   {nav.name}
-                </a>
+                </Link>
               </li>
             ))}
           </ul>
@@ -72,7 +74,7 @@ export default function Footer() {
           {/* <!-- Social Brands --> */}
           <div className="space-x-2 md:text-right">
             {socials.map((icon, i) => (
-              <a
+              <Link
                 key={i}
                 className="inline-flex h-8 w-8 items-center justify-center rounded-full text-center text-gray-500 transition hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2 focus:ring-offset-white dark:text-gray-500 dark:hover:bg-gray-800 dark:hover:text-gray-200 dark:focus:ring-offset-slate-900"
                 href="#"
@@ -87,7 +89,7 @@ export default function Footer() {
                 >
                   <path d={icon.icon} />
                 </svg>
-              </a>
+              </Link>
             ))}
           </div>
           {/* <!-- End Social Brands --> */}

@@ -83,21 +83,27 @@ export default function Navbar() {
       <div className="relative flex flex-wrap items-center py-[0.125rem]">
         {/* <div className="absolute inset-x-0 bottom-0 h-px bg-slate-900/5"></div> */}
         <Link href="/">
-          <a key={1} className="mr-auto flex-none py-2" aria-label="Go home">
-            <span className="sr-only">AMA Sunday Farmers Market</span>
-            <Image
-              className="md:w-30 aspect-w-10 aspect-h-4 md:h-12 lg:h-8"
-              src={logo}
-              alt="Visit Zimbabwe"
-              fill="#28a745"
-              quality={90}
-              width={105.5}
-              height={55}
-              loading={"lazy"}
-              blurDataURL="data:image/png;base64, iVBORwKGgoAAAANSUhEUgAAAMAAAADA..."
-              placeholder="blur"
-            />
-          </a>
+          <>
+            <div
+              key={1}
+              className="mr-auto flex-none py-2"
+              aria-label="Go home"
+            >
+              <span className="sr-only">AMA Sunday Farmers Market</span>
+              <Image
+                className="md:w-30 aspect-w-10 aspect-h-4 md:h-12 lg:h-8"
+                src={logo}
+                alt="Visit Zimbabwe"
+                fill="#28a745"
+                quality={90}
+                width={105.5}
+                height={55}
+                loading={"lazy"}
+                blurDataURL="data:image/png;base64, iVBORwKGgoAAAANSUhEUgAAAMAAAADA..."
+                placeholder="blur"
+              />
+            </div>
+          </>
         </Link>
         {/* // className=> */}
 
@@ -140,7 +146,7 @@ export default function Navbar() {
         </button>
         <div className="hidden text-sm font-medium lg:ml-8 lg:flex lg:items-center">
           {renderThemeChanger()}
-          <a
+          <Link
             href="/register"
             className={`flex items-center gap-x-2 text-gray-900 hover:text-primary/90 dark:border-gray-700 dark:text-gray-400 dark:hover:text-primaryDark sm:my-6 sm:border-l sm:border-gray-300 sm:pl-6 ${
               currentRoute === "/register" && "text-primary dark:text-primary"
@@ -157,8 +163,8 @@ export default function Navbar() {
               <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z" />
             </svg>
             Register
-          </a>
-          <a
+          </Link>
+          <Link
             className={`-my-2.5 ml-8 inline-flex justify-center rounded-lg bg-secondary/95 py-2.5 px-4 text-white hover:bg-primary/[.16] hover:text-primary/95 dark:bg-secondary/95 ${
               currentRoute === "/contact" &&
               " bg-primary/95 text-white  hover:bg-primary/[.16] hover:text-primary/95 dark:bg-primary/95"
@@ -174,7 +180,7 @@ export default function Navbar() {
                 →
               </span>
             </span>
-          </a>
+          </Link>
         </div>
       </div>
     </nav>
