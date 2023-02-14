@@ -28,7 +28,7 @@ export default function Heroo() {
           <div className="-m-2.5 mb-20 flex flex-wrap">
             <div className="w-full p-2.5 md:w-auto">
               <div className="block">
-                <Link href={"/register"}>
+                <Link href="/register">
                   <>
                     <button
                       className=" w-full rounded-xl border border-secondary bg-secondary py-4 px-9 font-semibold text-white transition duration-200 ease-in-out hover:border-primary hover:bg-primary/90 hover:text-white/95 focus:ring focus:ring-secondary/50"
@@ -62,7 +62,7 @@ export default function Heroo() {
             </div>
             <div className="w-full p-2.5 md:w-auto">
               <div className="block">
-                <Link href={"/contact"}>
+                <Link href="/contact">
                   <>
                     <button
                       className="w-full rounded-xl border bg-white/0 py-4 px-9 font-semibold text-slate-900 ring-1 ring-primary/[.16] transition duration-200 ease-in-out hover:bg-white/25 hover:ring-primary/[.16] dark:text-white/90 "
@@ -86,7 +86,7 @@ export default function Heroo() {
                           </svg>
                         </div>
                         <div className="w-auto p-1">
-                          <span>Book a call</span>
+                          <span>Contact Us</span>
                         </div>
                       </div>
                     </button>

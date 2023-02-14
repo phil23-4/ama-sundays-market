@@ -346,12 +346,10 @@ export default function Registration() {
                     className="text-sm text-gray-600 dark:text-gray-300"
                   >
                     By submitting this form I have read and acknowledged the{" "}
-                    <Link
-                      data-hs-overlay="#hs-regulations"
-                      className="font-medium text-primary/90 decoration-2 hover:underline"
-                      href="#"
-                    >
-                      Terms and Conditions
+                    <Link data-hs-overlay="#hs-regulations" href="#">
+                      <p className="font-medium text-primary/90 decoration-2 hover:underline">
+                        Terms and Conditions
+                      </p>
                     </Link>
                   </label>
                 </div>
