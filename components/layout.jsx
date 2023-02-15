@@ -2,7 +2,9 @@
 import Head from "next/head";
 
 import Navbar from "../components/NavBar/nav";
+
 import Footer from "./Footer/footer";
+import Nav from "./ui/test";
 
 export default function Layout({ children }) {
   return (
