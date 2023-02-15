@@ -239,43 +239,33 @@ export default function Navbar() {
           </span>
         </button>
         <div className="hidden text-sm font-medium lg:ml-8 lg:flex lg:items-center">
-          <Link
+          {/* eslint-disable-next-line @next/next/no-html-link-for-pages */}
+          <a
             href="/register"
             className={`flex items-center gap-x-2 text-gray-900 hover:text-primary/90 dark:border-gray-700 dark:text-gray-400 dark:hover:text-primaryDark sm:my-6 sm:border-l sm:border-gray-300 sm:pl-6 ${
               currentRoute === "/register" && "text-primary dark:text-primary"
             }`}
           >
-            <a
-              className={`flex items-center gap-x-2 text-gray-900 hover:text-primary/90 dark:border-gray-700 dark:text-gray-400 dark:hover:text-primaryDark sm:my-6 sm:border-l sm:border-gray-300 sm:pl-6 ${
-                currentRoute === "/register" && "text-primary dark:text-primary"
-              }`}
+            <svg
+              className="h-4 w-4"
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              fill="currentColor"
+              viewBox="0 0 16 16"
             >
-              <svg
-                className="h-4 w-4"
-                xmlns="http://www.w3.org/2000/svg"
-                width="16"
-                height="16"
-                fill="currentColor"
-                viewBox="0 0 16 16"
-              >
-                <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z" />
-              </svg>
-              Register
-            </a>
-          </Link>
-          <Link
-            className={`-my-2.5 ml-8 inline-flex justify-center rounded-lg bg-secondary/95 py-2.5 px-4 text-white hover:bg-primary/[.16] hover:text-primary/95 dark:bg-secondary/95 ${
-              currentRoute === "/contact" &&
-              " bg-primary/95 text-white  hover:bg-primary/[.16] hover:text-primary/95 dark:bg-primary/95"
-            }`}
-            href="/contact"
-          >
-            <a
+              <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z" />
+            </svg>
+            Register
+          </a>
+          <Link href="/contact">
+            <label
               className={`-my-2.5 ml-8 inline-flex justify-center rounded-lg bg-secondary/95 py-2.5 px-4 text-white hover:bg-primary/[.16] hover:text-primary/95 dark:bg-secondary/95 ${
                 currentRoute === "/contact" &&
-                " bg-primary/95 text-white  hover:bg-primary/[.16] hover:text-primary/95 dark:bg-primary/95"
+                " bg-primary/95 text-white  hover:bg-primary/[.16] dark:bg-primary/95 dark:hover:bg-primary/[.16] dark:hover:text-primary/95"
               }`}
             >
+              {" "}
               Get in-touch{" "}
               <span
                 aria-hidden="true"
@@ -283,7 +273,7 @@ export default function Navbar() {
               >
                 →
               </span>
-            </a>
+            </label>
           </Link>
         </div>
       </div>
