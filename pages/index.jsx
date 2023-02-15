@@ -2,7 +2,6 @@ import Image from "next/image";
 import Layout from "../components/layout";
 import PricingCard from "../components/Pricing/pricing";
 import Service from "../components/service";
-import Heroo from "../components/ui/heero";
 import Hero from "../components/ui/hero";
 import Vision from "../components/vision";
 
@@ -24,7 +23,7 @@ const logos = [
 export default function Home() {
   return (
     <Layout>
-      <Heroo />
+      <Hero />
       <Vision />
       <Service />
       {/* <PricingCard /> */}
