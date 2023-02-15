@@ -1,38 +1,40 @@
 import Image from "next/image";
+import Link from "next/link";
 import Partners from "./partners";
 
 export default function Hero() {
   return (
-    <div className="h-full w-full bg-white px-4 dark:bg-slate-900 lg:mb-24 lg:px-4">
-      {" "}
-      <div className="overflow-hidden pt-12">
-        <div className="container relative mx-auto px-4">
-          <div className="-m-8 flex flex-wrap">
-            <div className="w-full p-8 md:w-1/2">
-              <div className="mb-6 inline-block rounded-full bg-secondary/[.16] px-2 py-1 font-semibold">
-                <div className="-m-1 flex flex-wrap">
-                  <div className="w-auto p-3">
-                    <a className="text-sm" href="">
-                      &#x1F44B; Coming this March
-                    </a>
-                  </div>
-                </div>
+    // <!-- Features -->
+    <div className="mx-auto max-w-[85rem] px-4 py-10 sm:px-6 lg:px-4 lg:py-14">
+      {/* <!-- Grid --> */}
+      <div className="md:grid md:grid-cols-2 md:items-center md:gap-6 xl:gap-24">
+        <div className="w-full p-8">
+          <div className="mb-6 inline-block rounded-full bg-secondary/[.16] px-2 py-1 font-semibold">
+            <div className="-m-1 flex flex-wrap">
+              <div className="w-auto p-3">
+                <Link className="text-sm" href="">
+                  &#x1F44B; Coming this March
+                </Link>
               </div>
-              <h1 className="font-heading mb-8 bg-gradient-to-r from-primary/95 to-secondary/90 bg-clip-text text-2xl font-bold leading-none tracking-tight text-transparent md:max-w-xl md:text-base lg:text-6xl">
-                AMA Sunday Farmers Market
-              </h1>
-              <p className="mb-11 text-base font-medium dark:text-white/[.85] md:max-w-md">
-                Decentralizing Farmers Markets for sustainable agricultural
-                development that leaves no one and no place behind
-              </p>
-              <div className="-m-2.5 mb-20 flex flex-wrap">
-                <div className="w-full p-2.5 md:w-auto">
-                  <div className="block">
+            </div>
+          </div>
+          <h1 className="font-heading mb-8 bg-gradient-to-r from-primary/95 to-secondary/90 bg-clip-text text-2xl font-bold leading-none tracking-tight text-transparent md:max-w-xl md:text-base lg:text-6xl">
+            AMA Sunday Farmers Market
+          </h1>
+          <p className="mb-11 text-base font-medium dark:text-white/[.85] md:max-w-md">
+            Decentralizing Farmers Markets for sustainable agricultural
+            development that leaves no one and no place behind
+          </p>
+          <div className="-m-2.5 mb-20 flex flex-wrap">
+            <div className="w-full p-2.5 md:w-auto">
+              <div className="block">
+                <Link href="/register">
+                  <p href="/register">
                     <button
                       className=" w-full rounded-xl border border-secondary bg-secondary py-4 px-9 font-semibold text-white transition duration-200 ease-in-out hover:border-primary hover:bg-primary/90 hover:text-white/95 focus:ring focus:ring-secondary/50"
                       type="button"
                     >
-                      <div className="-m-1 flex flex-wrap">
+                      <div className="-m-1 flex flex-wrap items-center justify-center">
                         <div className="w-auto p-1">
                           <svg
                             xmlns="http://www.w3.org/2000/svg"
@@ -54,10 +56,14 @@ export default function Hero() {
                         </div>
                       </div>
                     </button>
-                  </div>
-                </div>
-                <div className="w-full p-2.5 md:w-auto">
-                  <div className="block">
+                  </p>
+                </Link>
+              </div>
+            </div>
+            <div className="w-full p-2.5 md:w-auto">
+              <div className="block">
+                <Link href="/contact">
+                  <>
                     <button
                       className="w-full rounded-xl border bg-white/0 py-4 px-9 font-semibold text-slate-900 ring-1 ring-primary/[.16] transition duration-200 ease-in-out hover:bg-white/25 hover:ring-primary/[.16] dark:text-white/90 "
                       type="button"
@@ -80,35 +86,43 @@ export default function Hero() {
                           </svg>
                         </div>
                         <div className="w-auto p-1">
-                          <span>Book a call</span>
+                          <span>Contact Us</span>
                         </div>
                       </div>
                     </button>
-                  </div>
-                </div>
+                  </>
+                </Link>
               </div>
-              <p className="text-lg font-semibold text-gray-800 dark:text-white/80">
-                Partners:
-              </p>
-              {/* Partner logos */}
-              <Partners />
             </div>
-
-            {/* <div className="aspect-w-12 aspect-h-4 w-fit md:w-1/2">
+          </div>
+          <p className="text-lg font-semibold text-gray-800 dark:text-white/80">
+            Partners:
+          </p>
+          {/* Partner logos */}
+          <Partners />
+        </div>
+        {/* <!-- End Col --> */}
+        <div className="relative">
+          {/* <!-- Card --> */}
+          <div className="flex flex-col rounded-xl p-4 sm:p-6 lg:p-10">
+            <div className="-aspect-h-2 aspect-w-12 relative rounded-2xl shadow-xl shadow-secondary/[.16] md:h-full md:w-full">
               <Image
-                className="mt-20 transform rounded-xl transition duration-1000 ease-in-out hover:-translate-y-4"
-                src="/assets/images/service2.jpg"
-                width={240}
-                height={440}
+                className="rounded-xl py-8 "
+                src="/assets/images/ama2.jpg"
+                height={905}
+                width={900}
+                quality={80}
                 loading={"lazy"}
-                quality={85}
-                // objectFit="contain"
+                objectFit="fill"
                 alt="AMA Sunday Farmers Market"
               />
-            </div> */}
+            </div>
           </div>
+          {/* <!-- End Card --> */}
         </div>
+        {/* <!-- End Col --> */}
       </div>
+      {/* <!-- End Grid --> */}
     </div>
   );
 }
