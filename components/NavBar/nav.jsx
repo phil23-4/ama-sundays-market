@@ -91,7 +91,7 @@ export default function Navbar() {
             >
               <span className="sr-only">AMA Sunday Farmers Market</span>
               <Image
-                className="md:w-30 aspect-w-10 aspect-h-4 md:h-12 lg:h-8"
+                className="sm-h-8 md:w-30 aspect-w-10 aspect-h-4 md:h-12 lg:h-8"
                 src={logo}
                 alt="Visit Zimbabwe"
                 fill="#28a745"
@@ -108,8 +108,9 @@ export default function Navbar() {
         {/* // className=> */}
 
         <div className="hidden lg:mx-auto lg:flex lg:w-auto  lg:items-center lg:space-x-10">
-          {navigation.nav.map((page) => (
+          {navigation.nav.map((page, i) => (
             <div
+              key={i}
               className={`ml-8 text-base font-medium  text-gray-900 hover:text-primaryDark dark:text-white/80 dark:hover:text-primary/75 ${
                 currentRoute === page.href &&
                 "text-primary/95 underline decoration-primary/95 decoration-4  underline-offset-[16px] dark:text-primary/95 dark:decoration-primary/95"
@@ -121,13 +122,15 @@ export default function Navbar() {
             </div>
           ))}
         </div>
+        {/* Theme Changer Icon */}
+        {renderThemeChanger()}
         {/* Menu Icon */}
         <button
           type="button"
           data-hs-collapse="#navbar-collapse-with-animation"
           aria-controls="navbar-collapse-with-animation"
           aria-label="Toggle navigation"
-          className="hs-collapse-toggle navbar-burger -my-1 ml-6 -mr-1 flex items-center justify-center p-2 lg:hidden"
+          className="hs-collapse-toggle navbar-burger -my-1 ml-1 -mr-1 flex items-center justify-center p-2 lg:hidden"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -144,8 +147,98 @@ export default function Navbar() {
             />
           </svg>
         </button>
+        <button
+          className="relative inline-flex items-center rounded-full bg-cyan-500 py-1.5 px-2 text-cyan-200 transition-colors duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-600 focus-visible:ring-offset-2 focus-visible:ring-offset-white"
+          id="headlessui-switch-5"
+          role="switch"
+          type="button"
+          tabIndex="0"
+          aria-checked="false"
+          data-headlessui-state=""
+        >
+          <span className="sr-only">Disable dark mode</span>
+          <svg
+            width="24"
+            height="24"
+            fill="none"
+            aria-hidden="true"
+            className="scale-0 transform transition-transform duration-500"
+          >
+            <path
+              d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"
+              fill="currentColor"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            ></path>
+            <path
+              d="M12 4v1M18 6l-1 1M20 12h-1M18 18l-1-1M12 19v1M7 17l-1 1M5 12H4M7 7 6 6"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            ></path>
+          </svg>
+          <svg
+            width="24"
+            height="24"
+            fill="none"
+            aria-hidden="true"
+            className="ml-3.5 scale-100 transform transition-transform duration-300"
+          >
+            <path
+              d="M18 15.63c-.977.52-1.945.481-3.13.481A6.981 6.981 0 0 1 7.89 9.13c0-1.185-.04-2.153.481-3.13C6.166 7.174 5 9.347 5 12.018A6.981 6.981 0 0 0 11.982 19c2.67 0 4.844-1.166 6.018-3.37ZM16 5c0 2.08-.96 4-3 4 2.04 0 3 .92 3 3 0-2.08.96-3 3-3-2.04 0-3-1.92-3-4Z"
+              fill="currentColor"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            ></path>
+          </svg>
+          <span className="absolute top-0.5 left-0.5 flex h-8 w-8 transform items-center justify-center rounded-full bg-white transition duration-500">
+            <svg
+              width="24"
+              height="24"
+              fill="none"
+              aria-hidden="true"
+              className="flex-none scale-100 transform text-cyan-500 opacity-100 transition duration-500"
+            >
+              <path
+                d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"
+                fill="currentColor"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              ></path>
+              <path
+                d="M12 4v1M18 6l-1 1M20 12h-1M18 18l-1-1M12 19v1M7 17l-1 1M5 12H4M7 7 6 6"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              ></path>
+            </svg>
+            <svg
+              width="24"
+              height="24"
+              fill="none"
+              aria-hidden="true"
+              className="-ml-6 flex-none scale-0 transform text-slate-700 opacity-0 transition duration-500"
+            >
+              <path
+                d="M18 15.63c-.977.52-1.945.481-3.13.481A6.981 6.981 0 0 1 7.89 9.13c0-1.185-.04-2.153.481-3.13C6.166 7.174 5 9.347 5 12.018A6.981 6.981 0 0 0 11.982 19c2.67 0 4.844-1.166 6.018-3.37ZM16 5c0 2.08-.96 4-3 4 2.04 0 3 .92 3 3 0-2.08.96-3 3-3-2.04 0-3-1.92-3-4Z"
+                fill="currentColor"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              ></path>
+            </svg>
+          </span>
+        </button>
         <div className="hidden text-sm font-medium lg:ml-8 lg:flex lg:items-center">
-          {renderThemeChanger()}
           <Link
             href="/register"
             className={`flex items-center gap-x-2 text-gray-900 hover:text-primary/90 dark:border-gray-700 dark:text-gray-400 dark:hover:text-primaryDark sm:my-6 sm:border-l sm:border-gray-300 sm:pl-6 ${
