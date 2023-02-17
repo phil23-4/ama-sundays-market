@@ -2,25 +2,32 @@ import Link from "next/link";
 
 const priceList = [
   {
-    name: "Daily",
-    target: "Lorem ipsum",
-    price: 50,
-    duration: "Sunday",
-    benefits: ["1 Sunday", "ipsum", "delores"],
+    name: "Individuals",
+    target: "Packages",
+
+    package: [
+      { price: 10, duration: "day" },
+      { price: 120, duration: "season" },
+    ],
+    benefits: [],
   },
   {
-    name: "Season",
-    target: "Lorem ipsum",
-    price: 120,
-    duration: "season",
-    benefits: ["12 Sundays", "ipsum", "delores"],
+    name: "Corporates",
+    target: "Packages",
+    package: [
+      { price: 200, duration: "day" },
+      { price: 2000, duration: "season" },
+    ],
+    benefits: ["Advertising space"],
   },
   {
-    name: "Monthly",
-    target: "Lorem ipsum",
-    price: 80,
-    duration: "month",
-    benefits: ["4 Sundays", "ipsum", "delores"],
+    name: "SMEs",
+    target: "Packages",
+    package: [
+      { price: 50, duration: "day" },
+      { price: 500, duration: "season" },
+    ],
+    benefits: ["Advertising space"],
   },
 ];
 
@@ -58,7 +65,7 @@ export default function PricingCard() {
             <div
               key={i}
               className={classNames(
-                `${price.name.toString().toLowerCase()}` === "season"
+                `${price.name.toString().toLowerCase()}` === "corporates"
                   ? "shadow-lg shadow-primary/[.26] hover:shadow-primary/20 dark:shadow-primary/[.16] "
                   : "shadow-none hover:shadow-secondary/30",
                 "relative z-10 rounded-xl border bg-white p-5 hover:-translate-y-2  hover:shadow-2xl  dark:border-gray-700 dark:bg-slate-900 md:p-10"
@@ -75,7 +82,7 @@ export default function PricingCard() {
        </span> */}
               <span
                 className={classNames(
-                  `${price.name.toString().toLowerCase()}` === "season"
+                  `${price.name.toString().toLowerCase()}` === "corporates"
                     ? "absolute top-0 right-0 rounded-tr-xl rounded-bl-xl bg-gray-800 py-1.5 px-3 text-xs font-medium text-white dark:bg-blue-500/10"
                     : "hidden"
                 )}
@@ -84,17 +91,19 @@ export default function PricingCard() {
                 Most popular
               </span>
 
-              <div className="mt-5">
-                <span className="text-3xl font-bold text-gray-800 dark:text-white lg:text-5xl">
-                  ${price.price}
-                </span>
-                <span className="text-lg font-bold text-gray-800 dark:text-white">
-                  .00
-                </span>
-                <span className="ml-3 text-gray-500 dark:text-white/90">
-                  USD / {price.duration}
-                </span>
-              </div>
+              {price.package.map((pack, i) => (
+                <div key={i} className="mt-5">
+                  <span className="text-xl font-bold text-gray-800 dark:text-white lg:text-3xl">
+                    ${pack.price}
+                  </span>
+                  <span className="text-lg font-bold text-gray-800 dark:text-white">
+                    .00
+                  </span>
+                  <span className="ml-3 text-gray-500 dark:text-white/90">
+                    USD / {pack.duration}
+                  </span>
+                </div>
+              ))}
 
               <div className="mt-5 grid gap-y-2 py-4 first:pt-0 last:pb-0 sm:grid-cols-1 sm:gap-x-6 sm:gap-y-0">
                 {/* <!-- List --> */}
@@ -145,7 +154,8 @@ export default function PricingCard() {
                     <button
                       type="button"
                       className={classNames(
-                        `${price.name.toString().toLowerCase()}` === "season"
+                        `${price.name.toString().toLowerCase()}` ===
+                          "corporates"
                           ? "bg-primary/80 hover:bg-primary/95 focus:ring-primary/50"
                           : "bg-secondary/80 hover:bg-secondary/95 focus:ring-secondary/50",
                         "inline-flex items-center justify-center gap-2 rounded-md border border-transparent py-3 px-4 text-xs font-semibold text-white transition-all focus:outline-none  focus:ring-2 focus:ring-offset-2  dark:focus:ring-offset-gray-800 lg:text-sm"
