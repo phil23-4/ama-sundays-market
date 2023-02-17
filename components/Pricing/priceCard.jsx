@@ -1,20 +1,20 @@
 const priceList = [
   {
-    name: "Daily",
+    name: "Individuals",
     target: "Lorem ipsum",
     price: 50,
     duration: "Sunday",
     benefits: ["lorem", "ipsum", "delores"],
   },
   {
-    name: "Season",
+    name: "SMEs",
     target: "Lorem ipsum",
     price: 120,
     duration: "season",
     benefits: ["lorem", "ipsum", "delores"],
   },
   {
-    name: "Monthly",
+    name: "Corporates",
     target: "Lorem ipsum",
     price: 200,
     duration: "month",
