@@ -16,7 +16,7 @@ const logos = [
 ];
 export default function Partners() {
   return (
-    <div className="-m-3 mt-0 flex max-w-md flex-wrap dark:mt-1  lg:max-w-lg">
+    <div className="-m-3 mt-0 grid max-w-md grid-cols-2 dark:mt-1 md:flex md:flex-wrap  lg:max-w-lg">
       {logos.map((partner, i) => (
         <div key={i} className="w-full p-3 md:w-1/2 lg:w-1/4">
           <div className="flex h-full cursor-pointer items-center justify-center rounded-2xl bg-transparent py-3 px-4 hover:-translate-y-2">
