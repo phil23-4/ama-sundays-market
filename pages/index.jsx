@@ -1,9 +1,8 @@
 import Image from "next/image";
 import Layout from "../components/layout";
-import PricingCard from "../components/Pricing/pricing";
-import Service from "../components/service";
+import Service from "../components/ui/service";
 import Hero from "../components/ui/hero";
-import Vision from "../components/vision";
+import Vision from "../components/ui/vision";
 
 const logos = [
   { name: "AMA", image: "/assets/logos/ama.jfif", alt: "AMA logo" },
