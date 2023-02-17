@@ -32,7 +32,7 @@ export default function Home() {
 
         <div className="load-animation reveal mx-auto mb-20 max-w-xl text-center">
           <h2
-            className="font-heading mx-auto mb-4 max-w-xl text-5xl font-bold leading-tight dark:text-white md:text-5xl"
+            className="font-heading mx-auto mb-4 max-w-xl text-3xl font-bold leading-tight dark:text-white md:text-5xl"
             data-config-id="auto-txt-1-2"
           >
             Our Partners
@@ -43,7 +43,7 @@ export default function Home() {
 
         <div className="relative xl:mx-auto xl:w-11/12">
           {/* <!-- Grid --> */}
-          <div className="grid grid-cols-1 gap-3 lg:grid-cols-4 lg:gap-2">
+          <div className="grid grid-cols-2 gap-3 lg:grid-cols-4 lg:gap-2">
             {/* <!-- Card --> */}
             {logos.map((partner, i) => (
               <div key={i} className="w-full p-3 hover:-translate-y-1">
