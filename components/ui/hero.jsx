@@ -29,9 +29,9 @@ export default function Hero() {
             <div className="w-full p-2.5 md:w-auto">
               <div className="block">
                 <Link href="/register">
-                  <p href="/register">
+                  <label>
                     <button
-                      className=" w-full rounded-xl border border-secondary bg-secondary py-4 px-9 font-semibold text-white transition duration-200 ease-in-out hover:border-primary hover:bg-primary/90 hover:text-white/95 focus:ring focus:ring-secondary/50"
+                      className=" w-full rounded-xl border border-secondary bg-secondary py-4 px-9 font-semibold text-white transition duration-200 ease-in-out hover:border-primary hover:bg-primary/90 hover:text-white/95 focus:ring focus:ring-primary/50"
                       type="button"
                     >
                       <div className="-m-1 flex flex-wrap items-center justify-center">
@@ -56,16 +56,16 @@ export default function Hero() {
                         </div>
                       </div>
                     </button>
-                  </p>
+                  </label>
                 </Link>
               </div>
             </div>
             <div className="w-full p-2.5 md:w-auto">
               <div className="block">
                 <Link href="/contact">
-                  <>
+                  <label>
                     <button
-                      className="w-full rounded-xl border bg-white/0 py-4 px-9 font-semibold text-slate-900 ring-1 ring-primary/[.16] transition duration-200 ease-in-out hover:bg-white/25 hover:ring-primary/[.16] dark:text-white/90 "
+                      className="w-full rounded-xl border bg-white/0 py-4 px-9 font-semibold text-slate-900 ring-1 ring-primary/[.16] transition duration-200 ease-in-out hover:bg-secondary/25 hover:ring-primary/[.16] dark:text-white/90 dark:hover:bg-white/25 "
                       type="button"
                     >
                       <div className="-m-1 flex flex-wrap items-center justify-center">
@@ -90,7 +90,7 @@ export default function Hero() {
                         </div>
                       </div>
                     </button>
-                  </>
+                  </label>
                 </Link>
               </div>
             </div>
