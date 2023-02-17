@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-export default function Galleryy() {
+export default function Album() {
   return (
     <section className="mb-4 overflow-hidden text-gray-700">
       <div className="container mx-auto px-5 py-2 lg:px-32 lg:pt-24">
@@ -21,25 +21,28 @@ export default function Galleryy() {
             <div className="w-1/2 p-1 md:p-2">
               <Image
                 alt="gallery"
+                width={244}
+                height={207.8}
                 className="block h-full w-full rounded-lg object-cover object-center"
-                src="assets/images/services.jpg"
-                layout="fill"
+                src="/assets/images/services.jpg"
               />
             </div>
             <div className="w-1/2 p-1 md:p-2">
               <Image
                 alt="gallery"
+                width={244}
+                height={207.8}
                 className="block h-full w-full rounded-lg object-cover object-center"
-                src="assets/images/ama2.jpg"
-                layout="fill"
+                src="/assets/images/ama2.jpg"
               />
             </div>
             <div className="w-full p-1 md:p-2">
               <Image
                 alt="gallery"
-                layout="fill"
+                width={504}
+                height={270}
                 className="block h-full w-full rounded-lg object-cover object-center"
-                src="assets/images/ama3.jpg"
+                src="/assets/images/ama3.jpg"
               />
             </div>
           </div>
@@ -47,25 +50,28 @@ export default function Galleryy() {
             <div className="w-full p-1 md:p-2">
               <Image
                 alt="gallery"
-                layout="fill"
+                width={504}
+                height={270}
                 className="block h-full w-full rounded-lg object-cover object-center"
-                src="assets/images/ama1.jpg"
+                src="/assets/images/ama1.jpg"
               />
             </div>
             <div className="w-1/2 p-1 md:p-2">
               <Image
                 alt="gallery"
-                layout="fill"
+                width={244}
+                height={207.8}
                 className="block h-full w-full rounded-lg object-cover object-center"
-                src="assets/images/team1.jpg"
+                src="/assets/images/team1.jpg"
               />
             </div>
             <div className="w-1/2 p-1 md:p-2">
               <Image
                 alt="gallery"
-                layout="fill"
+                width={244}
+                height={207.8}
                 className="block h-full w-full rounded-lg object-cover object-center"
-                src="assets/images/service2.jpg"
+                src="/assets/images/service2.jpg"
               />
             </div>
           </div>
