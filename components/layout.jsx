@@ -15,7 +15,7 @@ export default function Layout({ children }) {
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Navbar />
+      <Nav />
       {/* <Sidebar /> */}
       <main className="h-full w-full overflow-y-auto bg-white px-4 text-gray-900 dark:bg-slate-900 dark:text-white/80 sm:px-6 md:px-8">
         {children}
