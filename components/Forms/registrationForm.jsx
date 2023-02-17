@@ -57,7 +57,7 @@ export default function Registration() {
   };
   //   Handling form submit
 
-  const handleSubmit = async (e) => {
+  const handleSubmite = async (e) => {
     e.preventDefault();
 
     let isValidForm = handleValidation();
@@ -95,13 +95,43 @@ export default function Registration() {
     console.log(firstName, lastName, email, company, phone, address);
   };
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log("Sending");
+    let data = {
+      firstName: firstName,
+      lastName: lastName,
+      email: email,
+      company: company,
+      phone: phone,
+      address: address,
+    };
+    fetch("/api/contact", {
+      method: "POST",
+      headers: {
+        Accept: "application/json, text/plain, */*",
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    }).then((res) => {
+      console.log("Response received");
+      if (res.status === 200) {
+        console.log("Response succeeded!");
+        setSubmitted(true);
+        setFirstName("");
+        setLastName(""), setEmail("");
+        setCompany(""), setPhone(""), setAddress("");
+      }
+    });
+  };
+
   return (
     // <!-- Contact Us -->
     <div className="mx-auto max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14">
       {/* <!-- Grid --> */}
       <div className="grid items-center gap-12 md:grid-cols-2">
         <div>
-          <h1 className="font-display inline text-3xl font-bold text-gray-800 dark:text-white sm:text-4xl lg:text-5xl lg:leading-tight">
+          <h1 className="inline font-display text-3xl font-bold text-gray-800 dark:text-white sm:text-4xl lg:text-5xl lg:leading-tight">
             Join us
           </h1>
           <p className="mt-1 text-gray-800 dark:text-white md:text-lg">
