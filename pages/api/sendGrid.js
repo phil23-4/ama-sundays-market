@@ -2,7 +2,7 @@ import sendgrid from '@sendgrid/mail';
 
 sendgrid.setApiKey(process.env.SENDGRID_API_KEY);
 
-async function sendEmail(req, res) {
+export default async function sendEmail(req, res) {
   try {
     await sendgrid.send({
       to: 'booking@amasundayfarmersmarket.com', // Your email where you'll receive emails
@@ -54,5 +54,3 @@ async function sendEmail(req, res) {
 
   return res.status(200).json({ error: '' });
 }
-
-export default sendEmail;
