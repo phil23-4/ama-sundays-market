@@ -65,11 +65,6 @@ export default function Registration() {
     if (isValidForm) {
       setButtonText("Sending");
       const res = await fetch("/api/sendGrid", {
-        method: "POST",
-        headers: {
-          Accept: "application/json, text/plain, */*",
-          "Content-Type": "application/json",
-        },
         body: JSON.stringify({
           firstName: firstName,
           lastName: lastName,
@@ -78,6 +73,10 @@ export default function Registration() {
           phone: phone,
           address: address,
         }),
+        headers: {
+          "Content-Type": "application/json",
+        },
+        method: "POST",
       });
 
       const { error } = await res.json();
@@ -216,7 +215,6 @@ export default function Registration() {
                         setFirstName(e.target.value);
                       }}
                       name="firstName"
-                      id="firstName"
                       className="block w-full rounded-md border-gray-200 py-3 px-4 text-sm focus:border-primary/90 focus:ring-primary/90 dark:border-gray-700 dark:bg-slate-900 dark:text-white/70"
                     />
                   </div>
@@ -236,7 +234,6 @@ export default function Registration() {
                         setLastName(e.target.value);
                       }}
                       name="lastName"
-                      id="lastName"
                       className="block w-full rounded-md border-gray-200 py-3 px-4 text-sm focus:border-primary/90 focus:ring-primary/90 dark:border-gray-700 dark:bg-slate-900 dark:text-white/70"
                     />
                   </div>
@@ -258,7 +255,6 @@ export default function Registration() {
                       setEmail(e.target.value);
                     }}
                     placeholder="example@email.com"
-                    id="email"
                     autoComplete="email"
                     className="required block w-full rounded-md border-gray-200 py-3 px-4 text-sm focus:border-primary/90 focus:ring-primary/90 dark:border-gray-700 dark:bg-slate-900 dark:text-white/70"
                   />
@@ -281,7 +277,6 @@ export default function Registration() {
                         setCompany(e.target.value);
                       }}
                       placeholder="Company name"
-                      id="company"
                       className="block w-full rounded-md border-gray-200 py-3 px-4 text-sm focus:border-primary/90 focus:ring-primary/90 dark:border-gray-700 dark:bg-slate-900 dark:text-white/70"
                     />
                   </div>
@@ -300,7 +295,6 @@ export default function Registration() {
                       onChange={(e) => {
                         setPhone(e.target.value);
                       }}
-                      id="phone"
                       placeholder="+263-713-678"
                       className="block w-full rounded-md border-gray-200 py-3 px-4 text-sm required:border-red-500 focus:border-primary/90 focus:ring-primary/90 dark:border-gray-700 dark:bg-slate-900 dark:text-white/70"
                     />
@@ -316,7 +310,6 @@ export default function Registration() {
                     Physical Address
                   </label>
                   <textarea
-                    id="address"
                     value={address}
                     onChange={(e) => {
                       setAddress(e.target.value);
