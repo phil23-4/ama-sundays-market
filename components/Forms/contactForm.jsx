@@ -25,7 +25,7 @@ export default function ContactUs() {
                 <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
                   <div>
                     <label
-                      htmlhtmlFor="hs-firstname-contacts-1"
+                      htmlFor="hs-firstname-contacts-1"
                       className="sr-only"
                     >
                       First Name
