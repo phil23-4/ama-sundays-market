@@ -9,11 +9,6 @@ export default function Layout({ children }) {
       <Head>
         <title>AMA Sundays Farmers Market</title>
         <meta
-          property="og:title"
-          content="AMA Sunday Farmers Market"
-          key="title"
-        />
-        <meta
           name="description"
           content="Decentralizing Farmers Markets for sustainable agricultural development that leaves no one and no place behind"
         />
