@@ -1,5 +1,5 @@
 import Layout from "../components/layout";
-import ContactUs from "../components/Forms/contact";
+import ContactUs from "../components/Forms/contactForm";
 
 export default function Contact() {
   return (
