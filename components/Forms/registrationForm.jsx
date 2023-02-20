@@ -57,14 +57,14 @@ export default function Registration() {
   };
   //   Handling form submit
 
-  const handleSubmite = async (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     let isValidForm = handleValidation();
 
     if (isValidForm) {
       setButtonText("Sending");
-      const res = await fetch("/api/contact", {
+      const res = await fetch("/api/sendGrid", {
         method: "POST",
         headers: {
           Accept: "application/json, text/plain, */*",
@@ -95,35 +95,35 @@ export default function Registration() {
     console.log(firstName, lastName, email, company, phone, address);
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log("Sending");
-    let data = {
-      firstName: firstName,
-      lastName: lastName,
-      email: email,
-      company: company,
-      phone: phone,
-      address: address,
-    };
-    fetch("/api/contact", {
-      method: "POST",
-      headers: {
-        Accept: "application/json, text/plain, */*",
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(data),
-    }).then((res) => {
-      console.log("Response received");
-      if (res.status === 200) {
-        console.log("Response succeeded!");
-        setSubmitted(true);
-        setFirstName("");
-        setLastName(""), setEmail("");
-        setCompany(""), setPhone(""), setAddress("");
-      }
-    });
-  };
+  // const handleSubmit = (e) => {
+  //   e.preventDefault();
+  //   console.log("Sending");
+  //   let data = {
+  //     firstName: firstName,
+  //     lastName: lastName,
+  //     email: email,
+  //     company: company,
+  //     phone: phone,
+  //     address: address,
+  //   };
+  //   fetch("/api/contact", {
+  //     method: "POST",
+  //     headers: {
+  //       Accept: "application/json, text/plain, */*",
+  //       "Content-Type": "application/json",
+  //     },
+  //     body: JSON.stringify(data),
+  //   }).then((res) => {
+  //     console.log("Response received");
+  //     if (res.status === 200) {
+  //       console.log("Response succeeded!");
+  //       setSubmitted(true);
+  //       setFirstName("");
+  //       setLastName(""), setEmail("");
+  //       setCompany(""), setPhone(""), setAddress("");
+  //     }
+  //   });
+  // };
 
   return (
     // <!-- Contact Us -->
