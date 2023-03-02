@@ -1,4 +1,43 @@
+import { useState } from "react";
+
 export default function ContactUs() {
+  const [firstname, setFirstName] = useState("");
+  const [laststname, setLastName] = useState("");
+  const [phone, setPhone] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+  const [submitted, setSubmitted] = useState(false);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log("Sending");
+    let data = {
+      firstname,
+      laststname,
+      phone,
+      email,
+      message,
+    };
+    fetch("/api/contacts", {
+      method: "POST",
+      headers: {
+        Accept: "application/json, text/plain, */*",
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    }).then((res) => {
+      console.log("Response received");
+      if (res.status === 200) {
+        console.log("Response succeeded!");
+        setSubmitted(true);
+        setFirstName("");
+        setLastName("");
+        setPhone("");
+        setEmail("");
+        setMessage("");
+      }
+    });
+  };
   return (
     // <!-- Contact Us -->
     <div className="mx-auto max-w-[85rem] px-4 py-10  sm:px-6 lg:px-8 lg:py-14">
@@ -24,29 +63,32 @@ export default function ContactUs() {
                 {/* <!-- Grid --> */}
                 <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
                   <div>
-                    <label
-                      htmlFor="hs-firstname-contacts-1"
-                      className="sr-only"
-                    >
+                    <label htmlFor="firstname" className="sr-only">
                       First Name
                     </label>
                     <input
                       type="text"
-                      name="hs-firstname-contacts-1"
-                      id="hs-firstname-contacts-1"
+                      name="firstname"
+                      onChange={(e) => {
+                        setFirstName(e.target.value);
+                      }}
+                      id="firstname"
                       className="block w-full rounded-md border-gray-200 py-3 px-4 text-sm focus:border-primary/90 focus:ring-primary/90 dark:border-gray-700 dark:bg-slate-900 dark:text-gray-400"
                       placeholder="First Name"
                     />
                   </div>
 
                   <div>
-                    <label htmlFor="hs-lastname-contacts-1" className="sr-only">
+                    <label htmlFor="lastname" className="sr-only">
                       Last Name
                     </label>
                     <input
                       type="text"
-                      name="hs-lastname-contacts-1"
-                      id="hs-lastname-contacts-1"
+                      name="lastname"
+                      onChange={(e) => {
+                        setLastName(e.target.value);
+                      }}
+                      id="lastname"
                       className="block w-full rounded-md border-gray-200 py-3 px-4 text-sm focus:border-primary/90 focus:ring-primary/90 dark:border-gray-700 dark:bg-slate-900 dark:text-gray-400"
                       placeholder="Last Name"
                     />
@@ -55,13 +97,16 @@ export default function ContactUs() {
                 {/* <!-- End Grid --> */}
 
                 <div>
-                  <label htmlFor="hs-email-contacts-1" className="sr-only">
+                  <label htmlFor="email" className="sr-only">
                     Email
                   </label>
                   <input
                     type="email"
-                    name="hs-email-contacts-1"
-                    id="hs-email-contacts-1"
+                    name="email"
+                    id="email"
+                    onChange={(e) => {
+                      setEmail(e.target.value);
+                    }}
                     autoComplete="email"
                     className="block w-full rounded-md border-gray-200 py-3 px-4 text-sm focus:border-primary/90 focus:ring-primary/90 dark:border-gray-700 dark:bg-slate-900 dark:text-gray-400"
                     placeholder="Email"
@@ -69,25 +114,31 @@ export default function ContactUs() {
                 </div>
 
                 <div>
-                  <label htmlFor="hs-phone-number-1" className="sr-only">
+                  <label htmlFor="phone" className="sr-only">
                     Phone Number
                   </label>
                   <input
                     type="text"
-                    name="hs-phone-number-1"
-                    id="hs-phone-number-1"
+                    name="phone"
+                    onChange={(e) => {
+                      setPhone(e.target.value);
+                    }}
+                    id="phone"
                     className="block w-full rounded-md border-gray-200 py-3 px-4 text-sm focus:border-primary/90 focus:ring-primary/90 dark:border-gray-700 dark:bg-slate-900 dark:text-gray-400"
                     placeholder="Phone Number"
                   />
                 </div>
 
                 <div>
-                  <label htmlFor="hs-about-contacts-1" className="sr-only">
+                  <label htmlFor="about" className="sr-only">
                     Details
                   </label>
                   <textarea
-                    id="hs-about-contacts-1"
-                    name="hs-about-contacts-1"
+                    id="about"
+                    name="about"
+                    onChange={(e) => {
+                      setMessage(e.target.value);
+                    }}
                     rows="4"
                     className="block w-full rounded-md border-gray-200 py-3 px-4 text-sm focus:border-primary/90 focus:ring-primary/90 dark:border-gray-700 dark:bg-slate-900 dark:text-gray-400"
                     placeholder="Details"
@@ -99,6 +150,9 @@ export default function ContactUs() {
               <div className="mt-4 grid">
                 <button
                   type="submit"
+                  onClick={(e) => {
+                    handleSubmit(e);
+                  }}
                   className="inline-flex items-center justify-center gap-x-3 rounded-md border border-transparent bg-primary/[.85] py-3 px-4 text-center text-sm font-medium text-white transition hover:bg-primary focus:outline-none focus:ring-2 focus:ring-primary/95 focus:ring-offset-2 focus:ring-offset-white dark:focus:ring-offset-gray-800 lg:text-base"
                 >
                   Send inquiry
