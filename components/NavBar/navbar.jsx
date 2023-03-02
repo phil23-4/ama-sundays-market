@@ -86,7 +86,7 @@ export default function Nav() {
             width={100}
             quality={80}
             loading={"lazy"}
-            alt="AMA Sunday Logo"
+            alt="AMA Sunday Farmers Market"
           />
         </Link>
         <div className="flex md:order-2">
