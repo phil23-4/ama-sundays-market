@@ -98,8 +98,6 @@ export default function Navbar() {
                 width={105.5}
                 height={55}
                 loading={"lazy"}
-                blurDataURL="data:image/png;base64, iVBORwKGgoAAAANSUhEUgAAAMAAAADA..."
-                placeholder="blur"
               />
             </div>
           </>
