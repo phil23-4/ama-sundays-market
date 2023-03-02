@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { useState } from "react";
 import Partners from "../ui/partners";
+import SuccessCard from "../ui/success";
 import TermsModal from "../ui/termsModal";
 
 export default function Registration() {
@@ -10,12 +11,14 @@ export default function Registration() {
   const [company, setCompany] = useState("");
   const [phone, setPhone] = useState("");
   const [address, setAddress] = useState("");
+  const [submitted, setSubmitted] = useState(false);
+  const [agree, setAgree] = useState(false);
 
   //   Form validation state
   const [errors, setErrors] = useState({});
 
   //   Setting button text on form submission
-  const [buttonText, setButtonText] = useState("Send");
+  const [buttonText, setButtonText] = useState("Register");
 
   // Setting success or failure messages states
   const [showSuccessMessage, setShowSuccessMessage] = useState(false);
@@ -63,8 +66,8 @@ export default function Registration() {
     let isValidForm = handleValidation();
 
     if (isValidForm) {
-      setButtonText("Sending");
-      const res = await fetch("/api/sendGrid", {
+      setButtonText("Registering");
+      const res = await fetch("/api/register", {
         body: JSON.stringify({
           firstName: firstName,
           lastName: lastName,
@@ -84,14 +87,20 @@ export default function Registration() {
         console.log(error);
         setShowSuccessMessage(false);
         setShowFailureMessage(true);
-        setButtonText("Send");
+        setButtonText("Try again!");
         return;
       }
       setShowSuccessMessage(true);
       setShowFailureMessage(false);
-      setButtonText("Send");
+      setButtonText("Registered");
+      setSubmitted(true);
+      setFirstName("");
+      setLastName("");
+      setCompany("");
+      setPhone("");
+      setEmail("");
+      setAddress("");
     }
-    console.log(firstName, lastName, email, company, phone, address);
   };
 
   return (
@@ -196,7 +205,7 @@ export default function Registration() {
               Applicant information
             </h2>
 
-            <form onSubmit={handleSubmit}>
+            <form id="registrationForm" onSubmit={handleSubmit}>
               <div className="mt-6 grid gap-4 lg:gap-6">
                 {/* <!-- Grid --> */}
                 <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:gap-6">
@@ -215,6 +224,7 @@ export default function Registration() {
                         setFirstName(e.target.value);
                       }}
                       name="firstName"
+                      required
                       className="block w-full rounded-md border-gray-200 py-3 px-4 text-sm focus:border-primary/90 focus:ring-primary/90 dark:border-gray-700 dark:bg-slate-900 dark:text-white/70"
                     />
                   </div>
@@ -234,6 +244,7 @@ export default function Registration() {
                         setLastName(e.target.value);
                       }}
                       name="lastName"
+                      required
                       className="block w-full rounded-md border-gray-200 py-3 px-4 text-sm focus:border-primary/90 focus:ring-primary/90 dark:border-gray-700 dark:bg-slate-900 dark:text-white/70"
                     />
                   </div>
@@ -256,6 +267,7 @@ export default function Registration() {
                     }}
                     placeholder="example@email.com"
                     autoComplete="email"
+                    required
                     className="required block w-full rounded-md border-gray-200 py-3 px-4 text-sm focus:border-primary/90 focus:ring-primary/90 dark:border-gray-700 dark:bg-slate-900 dark:text-white/70"
                   />
                 </div>
@@ -277,6 +289,7 @@ export default function Registration() {
                         setCompany(e.target.value);
                       }}
                       placeholder="Company name"
+                      required
                       className="block w-full rounded-md border-gray-200 py-3 px-4 text-sm focus:border-primary/90 focus:ring-primary/90 dark:border-gray-700 dark:bg-slate-900 dark:text-white/70"
                     />
                   </div>
@@ -296,6 +309,7 @@ export default function Registration() {
                         setPhone(e.target.value);
                       }}
                       placeholder="+263-713-678"
+                      required
                       className="block w-full rounded-md border-gray-200 py-3 px-4 text-sm required:border-red-500 focus:border-primary/90 focus:ring-primary/90 dark:border-gray-700 dark:bg-slate-900 dark:text-white/70"
                     />
                   </div>
@@ -317,6 +331,7 @@ export default function Registration() {
                     placeholder="55 Hudson Avenue Harare, Zimbabwe"
                     name="address"
                     rows="4"
+                    required
                     className="block w-full rounded-md border-gray-200 py-3 px-4 text-sm focus:border-primary/90 focus:ring-primary/90 dark:border-gray-700 dark:bg-slate-900 dark:text-white/70"
                   ></textarea>
                 </div>
@@ -327,15 +342,19 @@ export default function Registration() {
               <div className="mt-3 flex">
                 <div className="flex">
                   <input
-                    id="remember-me"
-                    name="remember-me"
+                    id="agree"
+                    name="agree"
+                    value={agree}
                     type="checkbox"
+                    required
+                    title="Please read and accept the terms and conditions first"
+                    message="Please read and accept the terms and conditions"
                     className="mt-1.5 shrink-0 cursor-pointer rounded border-gray-200 text-primary/90 focus:ring-primary/90 dark:border-gray-700 dark:bg-gray-800 dark:checked:border-primary/90 dark:checked:bg-primary/90 dark:focus:ring-offset-gray-800"
                   />
                 </div>
                 <div className="ml-3">
                   <label
-                    htmlFor="remember-me"
+                    htmlFor="agree"
                     className="text-sm text-gray-600 dark:text-gray-300"
                   >
                     By submitting this form I have read and acknowledged the{" "}
@@ -356,6 +375,10 @@ export default function Registration() {
               <div className="mt-6 grid">
                 <button
                   type="submit"
+                  value={buttonText}
+                  onChange={(e) => {
+                    setButtonText(e.target.value);
+                  }}
                   className="inline-flex items-center justify-center gap-x-3 rounded-md border border-transparent bg-primary/80 py-3 px-4 text-center text-sm font-medium text-white transition hover:bg-primary focus:outline-none focus:ring-2 focus:ring-primary/90 focus:ring-offset-2 focus:ring-offset-white dark:focus:ring-offset-gray-800 lg:text-base"
                 >
                   <div className="w-auto p-1">
@@ -374,8 +397,17 @@ export default function Registration() {
                       />
                     </svg>
                   </div>
-                  Register
+                  {buttonText}
                 </button>
+              </div>
+              <div className="text-left">
+                {showSuccessMessage && <SuccessCard />}
+
+                {showFailureMessage && (
+                  <p className="text-red-500">
+                    Oops! Something went wrong, please try again.
+                  </p>
+                )}
               </div>
             </form>
 
