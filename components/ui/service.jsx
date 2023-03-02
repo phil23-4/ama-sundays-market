@@ -82,10 +82,7 @@ export default function Service() {
             {services.map((service, i) => (
               <>
                 {/* <!-- Card --> */}
-                <div
-                  key={i}
-                  className="group flex h-full w-full gap-y-6 rounded-lg p-5 transition-all hover:bg-gray-100 dark:hover:bg-white/[.075]"
-                >
+                <div className="group flex h-full w-full gap-y-6 rounded-lg p-5 transition-all hover:bg-gray-100 dark:hover:bg-white/[.075]">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
@@ -102,7 +99,7 @@ export default function Service() {
                   </svg>
 
                   <div>
-                    <div>
+                    <div key={i}>
                       <h3 className="block font-bold text-gray-800 dark:text-white">
                         {service.name}
                       </h3>
@@ -124,6 +121,5 @@ export default function Service() {
       </div>
       {/* <!-- End Grid --> */}
     </div>
-    //   {/* // <!-- End Icon Blocks --> */}
   );
 }

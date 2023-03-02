@@ -6,7 +6,7 @@ export default function Vision() {
       {/* <!-- Grid --> */}
       <div className="grid items-center gap-12 md:grid-cols-2">
         <div>
-          <h1 className="font-display inline text-3xl font-bold text-gray-800 dark:text-white sm:text-4xl lg:text-5xl lg:leading-tight">
+          <h1 className="inline font-display text-3xl font-bold text-gray-800 dark:text-white sm:text-4xl lg:text-5xl lg:leading-tight">
             Our Vision
           </h1>
           <p className="mt-1 text-gray-800 dark:text-white md:text-lg">
@@ -95,7 +95,6 @@ export default function Vision() {
                 src="/assets/images/ama3.jpg"
                 layout="fill"
                 quality={85}
-                // objectFit="contain"
                 alt="AMA Sunday Farmers Market"
               />
             </div>
