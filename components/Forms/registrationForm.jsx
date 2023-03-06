@@ -308,9 +308,9 @@ export default function Registration() {
                       onChange={(e) => {
                         setPhone(e.target.value);
                       }}
-                      placeholder="+263-713-678"
+                      placeholder="+263713678222"
                       required
-                      className="block w-full rounded-md border-gray-200 py-3 px-4 text-sm required:border-red-500 focus:border-primary/90 focus:ring-primary/90 dark:border-gray-700 dark:bg-slate-900 dark:text-white/70"
+                      className="block w-full rounded-md border-gray-200 py-3 px-4 text-sm focus:border-primary/90 focus:ring-primary/90 dark:border-gray-700 dark:bg-slate-900 dark:text-white/70"
                     />
                   </div>
                 </div>
