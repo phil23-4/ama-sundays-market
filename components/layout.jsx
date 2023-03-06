@@ -12,7 +12,6 @@ export default function Layout({ children }) {
           name="description"
           content="Decentralizing Farmers Markets for sustainable agricultural development that leaves no one and no place behind"
         />
-        <keywords />
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
