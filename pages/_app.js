@@ -1,3 +1,4 @@
+import { Analytics } from '@vercel/analytics/react';
 import { useEffect } from 'react';
 import 'tailwindcss/tailwind.css';
 import { ThemeProvider } from 'next-themes';
@@ -10,6 +11,7 @@ function AmaSundaysMarket({ Component, pageProps }) {
   return (
     <ThemeProvider enableSystem={true} attribute="class">
       <Component {...pageProps} />
+      <Analytics />
     </ThemeProvider>
   );
 }
