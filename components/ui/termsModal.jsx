@@ -42,17 +42,17 @@ export default function TermsModal() {
             </button>
           </div>
 
-          <div className="overflow-y-auto p-4 sm:p-10">
+          <div className="overflow-y-auto p-8 md:p-4">
             <div className="mb-6 text-center">
-              <h3 className="mb-2 text-xl font-bold text-gray-800 dark:text-gray-200">
-                AMA FARMER&apos;S MARKET RULES AND REGULATIONS
-              </h3>
+              <h1 className="mb-2 text-lg font-bold text-gray-800 dark:text-gray-200 lg:text-xl">
+                AMA SUNDAY FARMER&apos;S MARKET RULES AND REGULATIONS
+              </h1>
             </div>
 
             <div className="space-y-4">
-              <h4 className="mb-2 text-sm font-semibold uppercase text-gray-600 dark:text-gray-200">
+              <h2 className="mb-2 text-sm font-semibold uppercase text-gray-600 dark:text-gray-200">
                 General
-              </h4>
+              </h2>
               {/* <!-- Card --> */}
               <div className="flex flex-col rounded-xl border bg-white shadow-sm dark:border-gray-700 dark:bg-gray-800">
                 <label
