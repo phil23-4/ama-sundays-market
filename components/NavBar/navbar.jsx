@@ -78,7 +78,7 @@ export default function Nav() {
       )}
     >
       <div className="container mx-auto flex flex-wrap items-center justify-between">
-        <Link href="https://flowbite.com/" className="flex items-center">
+        <Link href="/" className="flex items-center">
           <Image
             src={logo}
             className="mr-3 h-3 sm:h-6"
